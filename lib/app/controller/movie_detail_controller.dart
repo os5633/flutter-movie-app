@@ -32,9 +32,7 @@ class MovieDetailController extends GetxController {
     List<Review> reviewListResult = await MovieDetailRepository.to
         .loadReview(int.parse(Get.parameters["movieId"]!));
 
-    if (reviewListResult.isEmpty) {
-      reviewList([]);
-    } else {
+    if (reviewListResult.isNotEmpty) {
       reviewList(reviewListResult);
     }
   }

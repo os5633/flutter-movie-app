@@ -17,16 +17,21 @@ class MovieListRepository extends GetConnect {
   Future<List<MovieList>> loadMovieList(ListType listType) async {
     String url;
 
-    if (listType == ListType.nowPlaying) {
-      url = "/movie/now_playing?api_key=$movieApiKey";
-    } else if (listType == ListType.upComing) {
-      url = "/movie/upcoming?api_key=$movieApiKey";
-    } else if (listType == ListType.popular) {
-      url = "/movie/popular?api_key=$movieApiKey";
-    } else if (listType == ListType.topRated) {
-      url = "/movie/top_rated?api_key=$movieApiKey";
-    } else {
-      url = "/movie/now_playing?api_key=$movieApiKey";
+    switch (listType) {
+      case ListType.nowPlaying:
+        url = "/movie/now_playing?api_key=$movieApiKey";
+        break;
+      case ListType.upComing:
+        url = "/movie/upcoming?api_key=$movieApiKey";
+        break;
+      case ListType.popular:
+        url = "/movie/popular?api_key=$movieApiKey";
+        break;
+      case ListType.topRated:
+        url = "/movie/top_rated?api_key=$movieApiKey";
+        break;
+      default:
+        url = "/movie/now_playing?api_key=$movieApiKey";
     }
 
     final res = await get(url);
