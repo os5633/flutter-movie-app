@@ -10,7 +10,8 @@ List<GetPage> routes = [
     page: () => const MovieListView(),
   ),
   GetPage(
-      name: "/MovieDetailView/:movieId",
-      page: () => const MovieDetailView(),
-      binding: DetailBinding()),
+    name: "/MovieDetailView/:movieId",
+    page: () => const MovieDetailView(),
+    binding: DetailBinding(),
+  ),
 ];

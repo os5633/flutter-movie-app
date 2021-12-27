@@ -22,9 +22,9 @@ class MovieListController extends GetxController {
   }
 
   void loadNowPlayingList() async {
-    List<MovieList> movieListResult =
+    List<MovieList> nowPlayingResult =
         await MovieListRepository.to.loadMovieList(ListType.nowPlaying);
-    nowPlayingList(movieListResult);
+    nowPlayingList(nowPlayingResult);
   }
 
   void loadUpCommingList() async {
@@ -34,9 +34,9 @@ class MovieListController extends GetxController {
   }
 
   void loadPopularList() async {
-    List<MovieList> popularListListResult =
+    List<MovieList> popularListResult =
         await MovieListRepository.to.loadMovieList(ListType.popular);
-    popularList(popularListListResult);
+    popularList(popularListResult);
   }
 
   void loadTopRatedList() async {
@@ -51,11 +51,8 @@ class MovieListController extends GetxController {
   }
 
   String findGenre(int id) {
-    if (genreList.isEmpty) {
-      return "-";
-    } else {
-      final genre = genreList.firstWhere((element) => element.id == id);
-      return genre.name;
-    }
+    if (genreList.isEmpty) return "-";
+    final genre = genreList.firstWhere((element) => element.id == id);
+    return genre.name;
   }
 }

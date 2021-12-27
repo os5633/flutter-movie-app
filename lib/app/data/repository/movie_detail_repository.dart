@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 import 'package:movie2/app/contant.dart';
 import 'package:movie2/app/data/model/cast_model.dart';
-import 'package:movie2/app/data/model/movie_detail_modal.dart';
+import 'package:movie2/app/data/model/movie_detail_model.dart';
 import 'package:movie2/app/data/model/review_model.dart';
 
 class MovieDetailRepository extends GetConnect {

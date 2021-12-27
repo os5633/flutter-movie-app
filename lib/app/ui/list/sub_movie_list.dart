@@ -87,15 +87,19 @@ class SubMovieList extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(
-                            list[index]
-                                .genreIds
-                                .map((id) => movieListController.findGenre(id))
-                                .join(", "),
-                            style: const TextStyle(
-                                fontSize: 9,
-                                color: Color(0xff9a9a9a),
-                                fontWeight: FontWeight.w500)),
+                        Flexible(
+                          child: Text(
+                              list[index]
+                                  .genreIds
+                                  .map(
+                                      (id) => movieListController.findGenre(id))
+                                  .join(", "),
+                              overflow: TextOverflow.ellipsis,
+                              style: const TextStyle(
+                                  fontSize: 9,
+                                  color: Color(0xff9a9a9a),
+                                  fontWeight: FontWeight.w500)),
+                        ),
                         Text(
                           DateFormat("yyyy-MM-dd")
                               .format(list[index].releaseDate),
