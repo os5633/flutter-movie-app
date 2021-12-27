@@ -5,7 +5,6 @@ class Review {
   });
 
   String author;
-
   String content;
 
   factory Review.fromJson(Map<String, dynamic> json) => Review(
